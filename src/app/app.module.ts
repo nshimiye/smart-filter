@@ -4,17 +4,24 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { ChatBoxComponent } from './chat-box/chat-box.component';
+
+import { TextParsingService } from './services/text-parsing.service';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChatBoxComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    TextParsingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

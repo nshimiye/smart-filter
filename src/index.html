@@ -1,14 +1,85 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <title>NameFilter</title>
+  <title>Smart Filter</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <style>
+
+
+    .loader {
+      animation: animate 1.5s linear infinite;
+      clip: rect(0, 80px, 80px, 40px);
+      height: 80px;
+      width: 80px;
+      position: absolute;
+      left: calc(50% - 40px);
+      top: calc(50% - 40px);
+    }
+    
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg)
+      }
+      100% {
+        transform: rotate(220deg)
+      }
+    }
+    
+    .loader:after {
+      animation: animate2 1.5s ease-in-out infinite;
+      clip: rect(0, 80px, 80px, 40px);
+      content: '';
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      position: absolute;
+    }
+    
+    @keyframes animate2 {
+      0% {
+        box-shadow: inset #fff 0 0 0 17px;
+        transform: rotate(-140deg);
+      }
+      50% {
+        box-shadow: inset #fff 0 0 0 2px;
+      }
+      100% {
+        box-shadow: inset #fff 0 0 0 17px;
+        transform: rotate(140deg);
+      }
+    }
+
+
+  </style>
 </head>
+
 <body>
-  <app-root>Loading...</app-root>
+  <app-root>
+    <div class="loader"></div>
+  </app-root>
+
+  <div style="
+      position: absolute;
+    bottom: 0;
+    color: white;
+    font-size: 1.5em;
+  ">
+    Inspired by:
+    <ul>
+      <li>
+        <a style="color: white;" href="https://sai.fusemachines.com">Sai</a>, Fusemachines's robot that finds you importants emails you have forgotten to respond to.
+      </li>
+      <li>
+        <a style="color: white;" href="http://codepen.io/supah/pen/jqOBqp">Direct Messaging codepen</a> by <a style="color: white;" href="http://codepen.io/supah">Fabio Ottaviani</a>
+      </li>
+    <ul>
+  </div>
 </body>
+
 </html>

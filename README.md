@@ -1,5 +1,17 @@
 # NameFilter
 
+# Step by step
+
+## Using a component
+`ng generate component chat-box`
+* A component is a logical representation of the user interface.
+
+* Adding external css is done through .angular-cli.json
+
+# Resource:
+* http://codepen.io/supah/pen/jqOBqp
+* http://codepen.io/marcobiedermann/pen/rohwn
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
 
 ## Development server

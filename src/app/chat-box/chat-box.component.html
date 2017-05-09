@@ -1,0 +1,47 @@
+<div class="chat">
+
+  <div class="chat-title">
+    <h1>Sai Carter</h1>
+    <h2>Fusemachines</h2>
+    <figure class="avatar">
+      <img src="https://sai.fusemachines.com/assets/images/sam_logo.png" /></figure>
+  </div>
+  <div class="messages">
+    <div class="messages-content mCustomScrollbar" style="overflow: auto;">
+
+
+      <div class="mCSB_container">
+      <div style="padding: 0 10px;" >
+        
+        <div *ngFor="let message of messages" class="" [class]="message.isQuestion? 'message message-personal new': 'message new'" >
+          <figure class="avatar" [hidden]="message.isQuestion">
+            <img src="https://sai.fusemachines.com/assets/images/sam_logo.png">
+          </figure>
+          {{message.text}}
+          <div class="timestamp">1:41</div>
+        </div>
+
+        <div *ngIf="fetchingAnswer" class="message loading new">
+          <figure class="avatar">
+            <img src="https://sai.fusemachines.com/assets/images/sam_logo.png" />
+            </figure>
+            <span></span>
+          </div>
+
+      </div>
+      </div>
+      <div class="mCSB_scrollTools"></div>
+
+
+
+
+
+
+    </div>
+  </div>
+  <form #textForm="ngForm" (ngSubmit)="submitForm(textForm)" class="message-box">
+    <textarea ngModel name="userInput" type="text" (keyup.enter)="submitForm(textForm)" class="message-input" placeholder="Type message..."></textarea>
+    <button type="submit" class="message-submit">Send</button>
+  </form>
+
+</div>

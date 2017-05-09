@@ -11,7 +11,7 @@ export class TextParsingService {
     this.backendApi = 'http://localhost:1337/entity-manager/extract-raw';
   }
 
-  public async textToEntities(text:string): Promise<Array<{name:string, nameType:string, score:string}>> {
+  public async textToEntities(text: string): Promise<Array<{ name: string, nameType: string, score: string }>> {
     const entities = await this.parseText(text);
 
     const cleanEntities = entities

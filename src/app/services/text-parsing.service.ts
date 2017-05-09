@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { environment } from '../../environments/environment';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -8,7 +9,7 @@ export class TextParsingService {
 
   backendApi: string;
   constructor(public http: Http) {
-    this.backendApi = 'http://localhost:1337/entity-manager/extract-raw';
+    this.backendApi = `${environment.backendHost}/entity-manager/extract-raw`;
   }
 
   public async textToEntities(text: string): Promise<Array<{ name: string, nameType: string, score: string }>> {

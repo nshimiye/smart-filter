@@ -1,4 +1,4 @@
-# NameFilter
+# Smart Sieve
 
 # Step by step
 
